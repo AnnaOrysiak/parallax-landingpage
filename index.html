@@ -15,34 +15,49 @@
 
   <div class="container">
 
-    <nav>
+    <nav class="lax" data-lax-translate-y="0 0, 1000 1000">
       <a href="#" class="logo">NatureComp</a>
       <div class="burger">
         <img src="images/menu.svg" alt="menu" />
       </div>
     </nav>
     <header>
-      <h1>Preserve Nature</h1>
+      <h1 class="lax" data-lax-translate-y="0 0, 300 -300" data-lax-opacity="0 1, 120 0">Preserve Nature</h1>
     </header>
-    <div class="line"></div>
+    <div class="line lax" data-lax-translate-y="0 0, 400 1000" data-lax-opacity="0 1, 100 0"></div>
   </div>
 
-  <div class="container secondary">
+  <div class="container secondary lax" data-lax-translate-y="0 0, 400 -600"
+    data-lax-opacity="0 0, 300 1, 300 1, 500 0 ">
     <main>
       <h2>Strategic</h2>
       <p class="subtext">Alliances</p>
 
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, laborum maiores? Quos earum asperiores
-        repudiandae ipsam fugit consequuntur illo animi fugiat tempore. Expedita dolore voluptatibus officiis itaque
-        earum repellat incidunt?</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, laborum maiores? Quos earum asperiores
-        repudiandae ipsam fugit consequuntur illo animi fugiat tempore. Expedita dolore voluptatibus officiis itaque
-        earum repellat incidunt?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis maiores dolor quia eaque deleniti nobis.
+        Modi nisi explicabo vel accusamus.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis maiores dolor quia eaque deleniti nobis.
+        Modi nisi explicabo vel accusamus.</p>
+
     </main>
   </div>
 
-  <img class="mountains" src="images/mountains-m.png" alt="mountains">
-  <img class="forest" src="images/forest-m.png" alt="forest">
+  <img class="mountains lax" data-lax-translate-y="0 1, 400 -100" src="images/homberg-mp.jpg" alt="mountains">
+  <img class="forest lax" data-lax-translate-y="0 1, 400 -260" src="images/forest-m.png" alt="forest">
+
+  <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+  <script>
+    window.onload = function () {
+      lax.setup() // init
+
+      const updateLax = () => {
+        lax.update(window.scrollY)
+        window.requestAnimationFrame(updateLax)
+      }
+
+      window.requestAnimationFrame(updateLax)
+    }
+  </script>
+
 </body>
 
 </html>
