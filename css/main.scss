@@ -15,8 +15,11 @@ body {
 .container {
   position: relative;
   padding: 2em;
-  margin-bottom: 4em;
-  height: 100vh;
+  min-height: 100vh;
+
+  @media screen and (min-width:1024px) {
+    padding: 2em calc((100vw - 1024px) / 2 + 2em);
+  }
 
   &:first-of-type {
     display: grid;
@@ -55,6 +58,18 @@ body {
       right: -.65em;
       bottom: -2px;
     }
+
+    @media (orientation:landscape) {
+      margin-bottom: 2em;
+    }
+
+    @media (orientation:landscape) and (min-width:1024px) {
+      margin-bottom: 7em;
+    }
+
+    @media (orientation: portrait) and (min-height: 800px) {
+      margin-bottom: 10em;
+    }
   }
 
 }
@@ -91,6 +106,7 @@ nav {
   position: relative;
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 
 h2 {
@@ -124,6 +140,12 @@ h2 {
   top: 60%;
 }
 
+@media (orientation:portrait) and (min-height:800px) {
+  .forest {
+    top: 50%;
+  }
+}
+
 .species {
   display: flex;
   flex-direction: column;
@@ -131,6 +153,7 @@ h2 {
   align-items: center;
   max-height: 500px;
   max-width: 300px;
+  margin-bottom: 20px;
 
   img {
     display: block;
@@ -138,8 +161,23 @@ h2 {
   }
 }
 
-.icon {
-  display: inline-block;
-  width: 30px;
-  margin: 20px 20px 20px 0;
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+
+  * {
+    flex-basis: calc(100% - 50px);
+  }
+
+  h1,
+  .subtext {
+    flex-basis: 100%;
+  }
+
+  .icon {
+    flex-basis: 30px;
+    display: inline-block;
+    width: 30px;
+    margin: 20px 20px 20px 0;
+  }
 }
